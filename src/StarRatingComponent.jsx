@@ -13,7 +13,8 @@ class StarRatingComponent extends Component {
     onStarHover: PropTypes.func,
     onStarHoverOut: PropTypes.func,
     renderStarIcon: PropTypes.func,
-    renderStarIconHalf: PropTypes.func
+    renderStarIconHalf: PropTypes.func,
+    renderStarIconEmpty: PropTypes.func
   };
 
   static defaultProps = {
@@ -133,7 +134,7 @@ class StarRatingComponent extends Component {
         <label
           key={`label_${id}`}
           style={starStyles(i, value)}
-          className={'dv-star-rating-star ' + (value >= i ? 'dv-star-rating-full-star' : 'dv-star-rating-empty-star')}
+          className={'dv-star-rating-star ' + (value >= i ? 'dv-star-rating-full-star' : 'dv-star-rating-full-star')}
           htmlFor={id}
           onClick={e => this.onStarClick(i, value, name, e)}
           onMouseOver={e => this.onStarHover(i, value, name, e)}
